@@ -9,22 +9,35 @@
 
         <div class="col">
             <label for="beginDate">Hired after: </label>
-            <input id="beginDate" type="text" class="form-control"
-                   placeholder="date" data-id="datetime" />
+            <div id="flatpickBegin" class="input-group">
+                <input id="beginDate" class="form-control" type="text" placeholder="Select Date.." data-input>
+                <div class="input-group-append">
+                    <button type="button" class="close" aria-label="Clear" data-clear>
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+            </div>
         </div>
         <div class="col">
             <label for="endDate">Hired before: </label>
-            <input id="endDate" type="text" class="form-control"
-                   placeholder="date" data-id="datetime" />
+            <div id="flatpickEnd" class="input-group">
+                <input id="endDate" class="form-control" type="text" placeholder="Select Date.." data-input>
+                <div class="input-group-append">
+                    <button type="button" class="close" aria-label="Clear" data-clear>
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+            </div>
         </div>
         <div class="col">
             <label for="performanceManager">Performance Manager: </label>
             <select id="performanceManager" class="form-control">
-
             </select>
         </div>
 
-        
+
     </div>
 <div class="p-4 border rounded">
     <table id="tblData" class="table table-striped table-bordered" style="width:100%">

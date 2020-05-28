@@ -6,7 +6,6 @@ $(document).ready(function () {
         source: "/home/GetAutocompleteNames"
     })
 
-    initDatePickers();
 
     populateSelect();
 
@@ -24,6 +23,7 @@ $(document).ready(function () {
         dataTable.ajax.reload();
     });
 
+    initDatePickers();
 });
 
 function initDataTable() {
@@ -49,16 +49,18 @@ function initDataTable() {
 }
 
 function initDatePickers() {
-    $("#beginDate").flatpickr({
+    $("#flatpickBegin").flatpickr({
         altInput: true,
         altFormat: "F j, Y",
         dateFormat: "Y-m-d",
+        wrap: true,
     });
 
-    $("#endDate").flatpickr({
+    $("#flatpickEnd").flatpickr({
         altInput: true,
         altFormat: "F j, Y",
         dateFormat: "Y-m-d",
+        wrap: true,
     });
 }
 
