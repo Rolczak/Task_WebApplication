@@ -3,7 +3,7 @@
 $(document).ready(function () {
     initDataTable();
     $("#name").autocomplete({
-        source: "/home/GetAutocompleteNames"
+        source: "api/employee/autocomplete/get"
     })
 
 
@@ -30,13 +30,13 @@ function initDataTable() {
     dataTable = $("#tblData").DataTable({
         searching: false,
         "ajax": {
-            "url": "/employee",
+            "url": "api/employee/get",
             "type": "GET",
             "data": function (data) {
-                data.nameTerm = $("#name").val();
-                data.beginDate = $("#beginDate").val();
-                data.endDate = $("#endDate").val();
-                data.performanceManagerId = parseInt($("#performanceManager").val());
+                    data.nameTerm = $("#name").val();
+                    data.beginDate = $("#beginDate").val();
+                    data.endDate = $("#endDate").val();
+                    data.performanceManagerId = $("#performanceManager").val();        
             }
             
         },
@@ -67,7 +67,7 @@ function initDatePickers() {
 function populateSelect() {
     $.ajax({
         type: "GET",
-        url: "/home/GetManagerList",
+        url: "api/employee/managers/get",
         success: function (data) {
             var selectList = $("#performanceManager");
             $.each(data, function () {
